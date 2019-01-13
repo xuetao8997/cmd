@@ -1,0 +1,6 @@
+PsExec64.exe -u DOMAIN\USERNAME -p ****** \\REMOTE-SERVER-FQDN cmd /c robocopy "SOURCE PATH" "DESTINATION PATH" *.* /e /copy:DAT // use specify account to copy files
+PsExec64.exe -s \\REMOTE-SERVER-FQDN cmd /c robocopy "SOURCE PATH" "DESTINATION PATH" *.* /e /MOVE // use SYSTEM account to copy files
+PsExec64.exe -s \\REMOTE-SERVER-FQDN cmd // open SYSTEM account command line
+"C:\Program Files\zabbix-agent\bin\win64\zabbix_agentd.exe" -i -c "C:\Program Files\zabbix-agent\conf\zabbix_agentd.win.conf" // operator by SYSTEM account
+"C:\Program Files\zabbix-agent\bin\win64\zabbix_agentd.exe" -s -c "C:\Program Files\zabbix-agent\conf\zabbix_agentd.win.conf" // operator by SYSTEM account
+exit // exit current command line
